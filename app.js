@@ -3,7 +3,7 @@ const stateJSON = require('./data/stateData.json');
 var express = require("express");
 var app = express();
 
-app.get("/fetchData", (req, res, next) => {
+app.get("/fetchData", (req, res) => {
     try {
         res.json(stateJSON);
     } catch (e) {
