@@ -1,0 +1,13 @@
+{
+    "name": "lcp360-svg-api",
+    "version": "1.0.0",
+    "description": "Express API for lcp360-svg-map",
+    "main": "app.js",
+    "scripts": {
+        "start":"node app.js"
+    },
+    "author": "MakoMitsuki",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
