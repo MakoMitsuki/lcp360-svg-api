@@ -4,7 +4,7 @@
     "description": "Express API for lcp360-svg-map",
     "main": "app.js",
     "scripts": {
-        "start":"node app.js"
+        "start": "node app.js"
     },
     "author": "MakoMitsuki",
     "dependencies": {
