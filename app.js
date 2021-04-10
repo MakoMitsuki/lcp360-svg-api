@@ -5,7 +5,25 @@ var app = express();
 
 app.get("/fetchData", (req, res) => {
     try {
-        res.json(stateJSON);
+        // removes duplicates
+        const reducedStates = stateJSON.reduce(function (acc, obj) {
+            let key = obj['id']
+            let isExist = acc.find(s => s.id === key);
+            if (!isExist) {
+                acc.push(obj);
+            }
+            return acc
+          }, []).sort(function(a, b) {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+          
+            return 0;
+          });
+        res.json(reducedStates);
     } catch (e) {
         console.trace(e);
         res.sendStatus(500);
