@@ -38,27 +38,6 @@ app.get("/fetchData", (req, res) => {
     }
 });
 
-app.get("/fetchRange/:id", (req, res) => {
-  let result = [];
-  if(req.params.id === "0") {
-     // 0 - 250
-     result = reducedStates.filter(usState => usState.visits >= 0 && usState.visits <= 250).map(usState => usState.id);
-  }
-  if(req.params.id === "1") {
-    // 250 - 500
-    result = reducedStates.filter(usState => usState.visits >= 250 && usState.visits <= 500).map(usState => usState.id);
-  }
-  if(req.params.id === "2") {
-    // 500 - 1000
-    result = reducedStates.filter(usState => usState.visits >= 500 && usState.visits <= 1000).map(usState => usState.id);
-  }
-  if(req.params.id === "3") {
-    // 1000+
-    result = reducedStates.filter(usState => usState.visits >= 1000).map(usState => usState.id);
-  }
-  res.json(result);
-});
-
 app.listen(3001, () => {
   console.log("Server running on port 3001");
 });
